@@ -4,10 +4,10 @@
 .rTable {
    	display: table;
    	width: 100%;
+   	table-layout: fixed;
 }
 
 .rTableRow {
-    width:100%;
    	display: table-row;
 }
 
@@ -20,10 +20,11 @@
    	display: table-cell;
    	text-align: center;
    	vertical-align: middle;
-   	width:33.3%;
    	padding: 3px 10px;
    	border: 1px solid #999999;
+   	word-wrap: break-word;
    	word-break: break-all;
+    -weasy-hyphens: auto;
 }
 
 .rTableHeading {
@@ -40,6 +41,15 @@
 
 .rTableBody {
    	display: table-row-group;
+}
+
+@page{
+
+    size: A4;
+
+    @bottom-right {
+        content: "Page " counter(page)
+                 " of " counter(pages) }
 }
 
 
