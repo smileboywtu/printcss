@@ -1,6 +1,41 @@
 
-/* use div replace table */
+/* set up text font and size */
+body,extarea {
+    font-family: "微软雅黑", "Arial", "宋体";
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    font-size: 10.5pt;
+}
 
+/* indent line */
+p {
+    text-indent: 2em;
+    line-height:150%;
+}
+
+img {
+    max-width:100%;
+    align: middle;
+}
+
+h1 {font-size:24pt; font-weight:bold; padding:10px 0; margin:8px 0;}
+h1.bottom {width:100%; border-bottom:solid #c2d69b 0.15cm; border-color: #000;}
+h2 {font-size:22pt; font-weight:bold; margin:15px 0;}
+h3 {font-size:16pt; font-weight:600; margin:15px 0;}
+h4 {font-size:15pt; font-weight:600; margin:15px 0;}
+h5 {font-size:14pt; font-weight:600; margin:15px 0;}
+h6 {font-size:12pt; font-weight:600; margin:15px 0;}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "微软雅黑", "Arial", "宋体";
+}
+
+/* set up page break */
+.page-breaker {display: block; page-break-before: always; mso-special-character:line-break;}
+
+
+/* use div replace table */
 .rTable {
    	display: table;
    	width: 100%;
@@ -27,6 +62,10 @@
     -weasy-hyphens: auto;
 }
 
+.rTableHead {
+    background: #EFF4E9;
+}
+
 .rTableHeading {
    	display: table-header-group;
    	background-color: #ddd;
@@ -43,44 +82,33 @@
    	display: table-row-group;
 }
 
-@page{
 
+@page{
     size: A4;
 
+    margin: 3cm 2cm;
+
+    font-family: "微软雅黑", "Arial", "宋体";
+    border-bottom: 2px solid #cecece;
+
+    @top-left {
+        font-size: 10.5pt;
+        content: "http://github.com/smileboywtu";
+        margin-bottom: -1.7cm;
+    }
+
+    @top-right {
+        font-size: 10.5pt;
+        content: "第 " counter(page)
+                " 页";
+        margin-bottom: -1.7cm;
+    }
+
+
     @bottom-right {
-        content: "Page " counter(page)
-                 " of " counter(pages) }
-}
+        font-size: 12pt;
+        content: "\00a9 2016 smileboy";
+        margin-top: -1.7cm;
+    }
 
-
-/*
-.rTable {
-    play: block;
-    width: 100%;
 }
-
-.rTableHeading, .rTableBody, .rTableFoot, .rTableRow{
-   	clear: both;
-}
-
-.rTableHead, .rTableFoot{
-   	background-color: #DDD;
-    font-weight: bold;
-}
-.rTableCell, .rTableHead {
-   	border: 1px solid #999999;
-   	float: left;
-   	height: 17px;
-   	overflow: hidden;
-   	padding: 3px 1.8%;
-   	width: 28%;
-}
-
-.rTable:after {
-   	visibility: hidden;
-   	display: block;
-   	font-size: 0;
-   	content: " ";
-   	clear: both;
-   	height: 0;
-}*/
