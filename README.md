@@ -1,6 +1,6 @@
 # printcss
 
-printable css style for create pdf
+css style for creating  beautiful pdf, see the demo pdf.
 
 # run
 
